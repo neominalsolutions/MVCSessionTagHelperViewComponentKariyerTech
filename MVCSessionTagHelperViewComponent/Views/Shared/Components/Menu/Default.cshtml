@@ -1,0 +1,26 @@
+﻿
+@model List<MenuViewModel>
+
+
+
+<ul class="navbar-nav flex-grow-1">
+
+    @foreach (var item in Model)
+    {
+    <li class="nav-item">
+
+        @if (string.IsNullOrEmpty(item.AreaName))
+        {
+            <a class="nav-link text-dark" href="/@item.ControllerName/@item.ActionName">@item.Title</a>
+
+
+        }
+        else if (item.AreaName == "Identity")
+        {
+            <a class="nav-link text-dark" href="/@item.AreaName/@item.ControllerName/@item.ActionName">@item.Title</a>
+        }
+
+    </li>
+    }
+
+</ul>
