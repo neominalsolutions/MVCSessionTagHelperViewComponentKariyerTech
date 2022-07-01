@@ -1,7 +1,23 @@
 ﻿
+@model List<MenuViewModel> 
+
+
 @{
     ViewData["Title"] = "SetSession";
 }
 
+
+@*DRY (Dont Repeat yourself )*@
+
+
 <h1>SetSession</h1>
 
+<ul>
+@foreach (var item in Model)
+{
+ <li><a href="@item.ControllerName/@item.ActionName">@item.Title</a></li> 
+}
+</ul>
+
+
+@*@await Component.InvokeAsync("Menu")*@

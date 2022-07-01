@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 using MVCSessionTagHelperViewComponent.Models;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace MVCSessionTagHelperViewComponent.ViewComponents
 {
-    public class MenuViewComponent: ViewComponent
+  public class MenuViewComponent : ViewComponent
+  {
+
+    public async Task<IViewComponentResult> InvokeAsync()
     {
-        public async Task<IViewComponentResult> InvokeAsync()
-        {
-            var model = new List<MenuViewModel>
+      var model = new List<MenuViewModel>
             {
                 new MenuViewModel
                 {
@@ -57,7 +59,9 @@ namespace MVCSessionTagHelperViewComponent.ViewComponents
                 }
             };
 
-            return View(await Task.FromResult(model));
-        }
+      return View(await Task.FromResult(model));
     }
+
+  }
+  
 }

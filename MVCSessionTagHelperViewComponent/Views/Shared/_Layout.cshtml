@@ -19,8 +19,12 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     @* view component çağırma şeklimiz *@
-                  @*@await Component.InvokeAsync("Menu")*@
-                    <vc:menu></vc:menu>
+                @*  @await Component.InvokeAsync("Menu")*@
+
+                @* Layout veri tabanından dinamik bir veri çekip ekrana basacaksak view component kullanmak zorundayız *@
+                 @* @await Component.InvokeAsync("Menu")*@
+
+                  <vc:menu></vc:menu>
                 </div>
             </div>
         </nav>
